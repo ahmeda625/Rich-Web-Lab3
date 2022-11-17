@@ -1,15 +1,25 @@
-function startTimer(duration, display) 
+import {
+    takeWhile,
+    takeUntil,
+    scan,
+    mapTo,
+    startWith,
+    repeat,
+    switchMapTo
+} from 'rxjs/operators';
+
+function startCountdown(duration, display) 
 {
     var c = 0;
     var c1 = 0;
-    var timer = duration, minutes, seconds;
+    var countdown = duration, mins, secs;
     setInterval(function() 
     {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-        if (minutes == 0 && seconds == 30) 
+        mins = parseInt(countdown / 60, 10);
+        secs = parseInt(countdown % 60, 10);
+        if (mins == 0 && secs == 30) 
         {
-            if (confirm("Do you want to continue the timer")) 
+            if (confirm("Do you want to continue the countdown")) 
             {
                 if (c > 2) 
                 {
@@ -17,25 +27,25 @@ function startTimer(duration, display)
                 } 
                 else 
                 {
-                    timer = timer + 60 * 1;
+                    countdown = countdown + 60 * 1;
                     c++;
                 }
             }
         }
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = minutes + ":" + seconds;
-        if (--timer < 0) 
+        mins = mins < 10 ? "0" + mins : mins;
+        secs = secs < 10 ? "0" + secs : secs;
+        display.textContent = mins + ":" + secs;
+        if (--countdown < 0) 
         {
-            timer = 0;
+            countdown = 0;
         }
     }, 1000);
 }
 
 window.onload = function() 
 {
-    var fiveMinutes = 60 * 5;
+    var fivemins = 60 * 5;
     display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startCountdown(fivemins, display);
 };
