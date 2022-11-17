@@ -23,19 +23,6 @@ function startTimer(duration, display)
             }
         }
 
-        if (seconds == 0 && c1 != 0) 
-        {
-            if (c1 == 1) 
-            {
-                alert("Finished!!");
-                c1 = 2;
-            }
-        } 
-        else 
-        {
-            c1 = 1;
-        }
-
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = minutes + ":" + seconds;
