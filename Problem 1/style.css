@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  body{
+    margin: 0;
+    padding-top: 5rem;
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .add{
+    
+    padding: 1.2rem 2.4rem;
+    position: fixed;
+    top: 1rem;
+    right: 44rem;
+    font-size: 20px;
+  }
+  
+  .note{
+    margin: 30px;
+    height: 200px;
+    width: 200px;
+    box-shadow: 10px;
+    background-color: beige;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .note .tools{
+    background-color: white;
+    padding: 0.5;
+  }
+  
+  .note .tools button
+  {
+    font-size: 1.5;
+    margin-left: 0.5rem;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .note .main
+  {
+    height: 300px;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .note textarea
+  {
+    outline: none;
+    border: none;
+    height: 400px;
+    width: 100%;
+  }
+  
+  .note .hidden
+  {
+    display: none;
+  }
